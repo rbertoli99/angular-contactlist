@@ -1,28 +1,21 @@
-# Angular Contactlist
+# Instruções
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.
+##### 1. Faça um Fork do projeto, clicando no botão no canto superior esquerdo. Com isso você está criando uma cópia do repositório na sua conta do Github.
 
-## Development server
+##### 2. Próximo passo é clonar o repositório, isso é, baixar o código para seu ambiente local.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+##### 3. Após baixado, rodar os seguintes comandos na raiz do projeto:
 
-## Code scaffolding
+```
+npm install
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+(Instala as dependências do projeto)
+```
 
-## Build
+```
+ng serve
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+(Inicia o servidor)
+```
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+##### 4. Por default, a aplicação irá ser servida em http://localhost:4200
