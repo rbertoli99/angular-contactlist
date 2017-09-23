@@ -9,35 +9,39 @@ import {ContactsService} from './contacts.service';
 })
 export class ContactsComponent implements OnInit {
 
+	loading = false;
+	contacts:Contact[];
+	inputName="";
+    inputPhone="";
+
   constructor(private contactsService:ContactsService) { }
 
   ngOnInit() {
 
-  	this.contacts = this.contactsService.getContacts();
+  	this.loading=true;
+
+  	//METODO GET
+  	this.contactsService.getContacts().subscribe(contacts => {
+  		this.contacts=contacts;
+  		this.loading=false;
+  	});
   }
 
-  contacts:Contact[];
 
 labelButton:string="Inserir";
 
-  //meuInput="";
-
-  alerta="O campo está em branco!";
-
-  //students=["Erika", "Danielle" , "Rodrigo"];
-
-
-
+//METODO DELETE
   	delete(contact){
-  		alert(contact.name);
-  		let index = this.contacts.indexOf(contact);
-  		this.contacts.splice(index,1);
+  		alert("Deleting contact "+contact.name);
+      this.contactsService.deleteContact(contact).subscribe(c => {
+      let index = this.contacts.indexOf(contact);
+      this.contacts.splice(index, 1);
+    });
   	}
 
-    inputName="";
-    inputPhone="";
 
-   	execAction() {
+//METODO POST
+   	insertContact() {
 
    		if (this.inputName != "" && this.inputPhone != ""){
 
@@ -45,11 +49,13 @@ labelButton:string="Inserir";
    				'name': this.inputName ,
    				'phone': this.inputPhone
    			}
-   			this.contacts.push(contact);
-   			this.clearForm();
+    this.contactsService.saveContact(contact).subscribe(c => {
+    this.contacts.push(c);
+    });
+    this.clearForm();
    	}
    		else {
-   			alert(this.alerta);
+   			alert("The field is empty!");
    		}
   	}
 

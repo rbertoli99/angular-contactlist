@@ -4,6 +4,10 @@
     (contactDeleted)="delete(c)" > </app-contact>
   </div>
 
+  <div *ngIf="loading">
+  Loading...
+</div>
+
 <br>
 Name:
 <input type="text" 
@@ -16,5 +20,5 @@ Phone:
 <br>
 
 <button 
-(click)="execAction()">
+(click)="insertContact()">
 {{labelButton}}</button>
