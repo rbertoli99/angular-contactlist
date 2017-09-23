@@ -1,0 +1,20 @@
+
+  <div *ngFor ="let c of contacts" >
+    <app-contact [contact]="c" 
+    (contactDeleted)="delete(c)" > </app-contact>
+  </div>
+
+<br>
+Name:
+<input type="text" 
+[(ngModel)]="inputName" />
+<br>
+Phone:
+<input type="text" 
+[(ngModel)]="inputPhone" />
+
+<br>
+
+<button 
+(click)="execAction()">
+{{labelButton}}</button>
