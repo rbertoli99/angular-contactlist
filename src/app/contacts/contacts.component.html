@@ -1,4 +1,4 @@
-
+<div class="border">
   <div *ngFor ="let c of contacts" >
     <app-contact [contact]="c" 
     (contactDeleted)="delete(c)" > </app-contact>
@@ -6,19 +6,44 @@
 
   <div *ngIf="loading">
   Loading...
+ </div>
+<br>
+<button class="btn btn-outline-dark" type="button" data-toggle="collapse" data-target="#collapseInsert" aria-expanded="false" aria-controls="collapseinsert">
+    Insert New Contact
+</button>
+<div class="collapse" id="collapseInsert">
+	<br>
+    <div class="row align-items-center">
+    <div class="col">
+    	<div class="row">
+    		<div class="col-2">
+    		Name: 
+    		</div>
+    		<div class="col">
+    			<input type="text" [(ngModel)]="inputName" />
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-2">
+    		Phone:
+    		</div>
+    		<div class="col">
+    		 <input type="text" [(ngModel)]="inputPhone" />
+    		</div>
+    	</div>    
+	</div>
+    <div class="col">	
+    <button type="button" class="btn btn-outline-dark" (click)="insertContact()">{{labelButton}}</button>
+    </div>
+  </div>
+</div>
 </div>
 
-<br>
-Name:
-<input type="text" 
-[(ngModel)]="inputName" />
-<br>
-Phone:
-<input type="text" 
-[(ngModel)]="inputPhone" />
 
-<br>
 
-<button 
-(click)="insertContact()">
-{{labelButton}}</button>
+
+
+
+
+
+

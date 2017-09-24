@@ -1,3 +1,16 @@
-<strong>Name:</strong> {{contact.name}} <br /> <strong>Phone:</strong> ({{contact.phone}}) <br>
-<button (click)="remove()">Remove</button>
-<br>
+
+<div class="border">
+<div class="row align-items-center">
+    <div class="col">
+    	<div class="row">
+    		<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name:</strong> &nbsp; {{contact.name}} 
+    	</div>
+    	<div class="row">
+    		<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone:</strong> &nbsp; ({{contact.phone}})
+    	</div>    
+	</div>
+    <div class="col">	
+    <button type="button" class="close" aria-label="Close" (click)="remove()"><span aria-hidden="true">&times;</span></button>
+    </div>
+</div>
+</div>

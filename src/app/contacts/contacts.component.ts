@@ -28,7 +28,7 @@ export class ContactsComponent implements OnInit {
   }
 
 
-labelButton:string="Inserir";
+labelButton:string="Insert";
 
 //METODO DELETE
   	delete(contact){
